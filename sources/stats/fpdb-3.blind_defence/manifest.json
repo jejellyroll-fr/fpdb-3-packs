@@ -1,0 +1,31 @@
+{
+  "schema": "fpdb_stat_pack",
+  "version": 1,
+  "id": "fpdb-3.blind_defence",
+  "name": "Blind defence",
+  "author": "fpdb-3",
+  "description": "How the big blind answers a single open from the cutoff, the button or the small blind: fold, call or 3-bet, and a Research preset by opener.",
+  "pack_version": "1.0.0",
+  "definition_schema_version": 1,
+  "min_fpdb_version": "3.9",
+  "fragments": {
+    "fpdb-3.blind_defence.bb_vs_steal": {
+      "street": "preflop",
+      "pot_type": "single_raised",
+      "position": [
+        "BB"
+      ],
+      "opponent_position": [
+        "CO",
+        "BTN",
+        "SB"
+      ]
+    }
+  },
+  "definitions": [
+    "stats/blind_defence.json"
+  ],
+  "presets": [
+    "presets/blind_defence.json"
+  ]
+}

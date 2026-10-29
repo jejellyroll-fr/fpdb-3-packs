@@ -1,0 +1,23 @@
+{
+  "schema": "fpdb_stat_pack",
+  "version": 1,
+  "id": "fpdb-3.steals",
+  "name": "Steals",
+  "author": "fpdb-3",
+  "description": "How often the button and the small blind raise first in, and a Research preset of steal attempts by position.",
+  "pack_version": "1.0.0",
+  "definition_schema_version": 1,
+  "min_fpdb_version": "3.9",
+  "fragments": {
+    "fpdb-3.steals.unopened": {
+      "street": "preflop",
+      "pot_type": "unopened"
+    }
+  },
+  "definitions": [
+    "stats/steals.json"
+  ],
+  "presets": [
+    "presets/steals.json"
+  ]
+}

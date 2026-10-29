@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "stats": [
+    {
+      "name": "fpdb-3.steals.btn_open",
+      "metric": "raise_frequency",
+      "fragments": [
+        "fpdb-3.steals.unopened"
+      ],
+      "filters": {
+        "position": [
+          "BTN"
+        ]
+      },
+      "label": {
+        "en": "Button open",
+        "fr": "Ouverture au bouton"
+      },
+      "description": {
+        "en": "How often the button raised first in when the pot was unopened.",
+        "fr": "Fréquence à laquelle le bouton relance en premier dans un pot non ouvert."
+      },
+      "format": "percentage",
+      "min_sample": 20,
+      "category": "Steals"
+    },
+    {
+      "name": "fpdb-3.steals.sb_open",
+      "metric": "raise_frequency",
+      "fragments": [
+        "fpdb-3.steals.unopened"
+      ],
+      "filters": {
+        "position": [
+          "SB"
+        ]
+      },
+      "label": {
+        "en": "Small blind open",
+        "fr": "Ouverture en petite blinde"
+      },
+      "format": "percentage",
+      "min_sample": 20,
+      "category": "Steals",
+      "description": {
+        "en": "How often the small blind raised first in when the pot was unopened.",
+        "fr": "Fréquence à laquelle la petite blinde relance en premier dans un pot non ouvert."
+      }
+    }
+  ]
+}

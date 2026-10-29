@@ -1,0 +1,53 @@
+name: Validate packs
+
+# Every package must install in fpdb exactly as listed: the same checks fpdb
+# runs before it installs anything from this gallery
+# (python -m fpdb_3_legacy.pack_gallery validate).
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      fpdb_ref:
+        description: "fpdb-3 branch or tag to validate against"
+        default: development
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      # fpdb-3's own CI pins (PySide6 below 6.12).
+      UV_CONSTRAINT: fpdb-3/.github/ci-constraints.txt
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Archives and index are up to date
+        run: python3 scripts/build.py --check
+
+      - name: Check out fpdb-3
+        uses: actions/checkout@v4
+        with:
+          repository: jejellyroll-fr/fpdb-3
+          ref: ${{ inputs.fpdb_ref || 'development' }}
+          path: fpdb-3
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: astral-sh/setup-uv@v3
+
+      - name: Install fpdb-3
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1 libgl1 libglib2.0-0 libdbus-1-3 libxkbcommon0
+          uv pip install --system -e ./fpdb-3
+
+      - name: Every package installs as listed
+        run: python -m fpdb_3_legacy.pack_gallery validate .

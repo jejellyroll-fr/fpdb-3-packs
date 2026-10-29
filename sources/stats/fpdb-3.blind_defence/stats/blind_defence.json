@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "stats": [
+    {
+      "name": "fpdb-3.blind_defence.bb_fold_vs_steal",
+      "metric": "fold_frequency",
+      "fragments": [
+        "fpdb-3.blind_defence.bb_vs_steal"
+      ],
+      "label": {
+        "en": "BB fold vs steal",
+        "fr": "BB fold contre vol"
+      },
+      "description": {
+        "en": "How often the big blind folded to a single open from the cutoff, the button or the small blind.",
+        "fr": "Fréquence à laquelle la grosse blinde se couche face à une ouverture du cutoff, du bouton ou de la petite blinde."
+      },
+      "format": "percentage",
+      "min_sample": 20,
+      "category": "Blind defence"
+    },
+    {
+      "name": "fpdb-3.blind_defence.bb_call_vs_steal",
+      "metric": "call_frequency",
+      "fragments": [
+        "fpdb-3.blind_defence.bb_vs_steal"
+      ],
+      "label": {
+        "en": "BB call vs steal",
+        "fr": "BB call contre vol"
+      },
+      "description": {
+        "en": "How often the big blind called a single open from the cutoff, the button or the small blind.",
+        "fr": "Fréquence à laquelle la grosse blinde suit une ouverture du cutoff, du bouton ou de la petite blinde."
+      },
+      "format": "percentage",
+      "min_sample": 20,
+      "category": "Blind defence"
+    },
+    {
+      "name": "fpdb-3.blind_defence.bb_3bet_vs_steal",
+      "metric": "raise_frequency",
+      "fragments": [
+        "fpdb-3.blind_defence.bb_vs_steal"
+      ],
+      "label": {
+        "en": "BB 3-bet vs steal",
+        "fr": "BB 3-bet contre vol"
+      },
+      "description": {
+        "en": "How often the big blind 3-bet a single open from the cutoff, the button or the small blind.",
+        "fr": "Fréquence à laquelle la grosse blinde 3-bet une ouverture du cutoff, du bouton ou de la petite blinde."
+      },
+      "format": "percentage",
+      "min_sample": 20,
+      "category": "Blind defence"
+    }
+  ]
+}
