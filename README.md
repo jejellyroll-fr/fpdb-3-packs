@@ -41,6 +41,24 @@ A HUD shows opponents' history. No pack can make fpdb recommend an action.
 
 ## Contributing a pack
 
+The quickest way is to let fpdb write it:
+
+1. In fpdb, open **Tools ▸ Share a HUD or pack** (or **Share yours…** in
+   **Get packs**). Pick one of your HUD profiles or installed stat packs, give
+   it an id (`yourname.topic`), an author, a licence and a description, and
+   choose a folder.
+2. fpdb writes a folder named after the id, laid out as this repository is. It
+   runs the same checks as an install first, so what it writes is accepted
+   here. Copy the folder's `hud/`, `stats/` and `sources/` into your copy of
+   this repository.
+3. Add the content of its `index-entry.json` to the `packs` list of
+   `index.json`. Its `sha256` and `size` are already filled in.
+4. Optionally add a screenshot in `screens/` and name it in the entry's
+   `screenshot`.
+5. Open a pull request.
+
+To write a package by hand instead:
+
 1. Add your package:
    - a HUD goes in `hud/<name>.fpdbhud`, which is what fpdb's **Export HUD** writes;
    - a stat pack goes, as its readable folder, in `sources/stats/<your.id>/`,
